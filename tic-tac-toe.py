@@ -83,9 +83,8 @@ def choisir_niveau_ia():
     pygame.display.set_caption('Choisissez le niveau de l\'IA')
     fond_ecran = pygame.image.load("image fond menu/niveau.jpg")
     
-    # Charger la police personnalisée
     police_titre = pygame.font.Font("pacman.TTF", 80)
-    police_niveau = pygame.font.Font("Pokemon_Solid.TTF", 40)  # Nouvelle police ajoutée
+    police_niveau = pygame.font.Font("Pokemon_Solid.TTF", 40)
     horloge = pygame.time.Clock()
 
     niveau_choisi = None
@@ -93,7 +92,7 @@ def choisir_niveau_ia():
     while True:
         ecran_niveau.blit(fond_ecran, (0, 0))
 
-        # Afficher le titre "Tic-Tac-Toe" en haut de la fenêtre avec la police personnalisée et en gris clair
+        # Afficher le titre "Tic-Tac-Toe" en haut de la fenêtre
         titre_surface = police_titre.render('Tic-Tac-Toe', True, (200, 200, 200))
         ombre_titre = police_titre.render('Tic-Tac-Toe', True, (30, 30, 30))
         ecran_niveau.blit(ombre_titre, (ecran_niveau.get_width() // 2 - ombre_titre.get_width() // 2 + 4, 35))
@@ -109,7 +108,6 @@ def choisir_niveau_ia():
         texte_moyen = police_niveau.render('Moyen', True, (0, 0, 0))
         texte_difficile = police_niveau.render('Difficile', True, (0, 0, 0))
 
-        # Ajustement de la position verticale pour chaque option
         hauteur_texte = texte_facile.get_height()
         espace_entre_options = 20
 
@@ -153,22 +151,22 @@ def choisir_niveau_ia():
                 pos = pygame.mouse.get_pos()
                 if rect_facile.collidepoint(pos):
                     niveau_choisi = "facile"
-                    pygame.quit()  # Fermer la fenêtre après avoir choisi le niveau
+                    pygame.quit()
                     return niveau_choisi
                 elif rect_moyen.collidepoint(pos):
                     niveau_choisi = "moyen"
-                    pygame.quit()  # Fermer la fenêtre après avoir choisi le niveau
+                    pygame.quit()
                     return niveau_choisi
                 elif rect_difficile.collidepoint(pos):
                     niveau_choisi = "difficile"
-                    pygame.quit()  # Fermer la fenêtre après avoir choisi le niveau
+                    pygame.quit()
                     return niveau_choisi
 
-        pygame.display.flip()  # Rafraîchir l'écran
+        pygame.display.flip()
 
         horloge.tick(60)
 
-# Définir le niveau de difficulté ici
+# Défini le niveau de difficulté
 niveau_difficulte = "difficile"
 mode_jeu = choisir_mode_de_jeu()
 
@@ -215,7 +213,7 @@ if mode_jeu is not None:
                 elif valeur == -1:
                     pygame.draw.circle(ecran, vert, (x * 100 + 50, y * 100 + 50), 38, largeur_ligne)
 
-# vérifier si lin de partie est bien fini
+# vérifie si la partie est bien fini
     def verifier_fin_partie():
         global fin_partie, vainqueur
         for x in range(3):
@@ -230,7 +228,7 @@ if mode_jeu is not None:
         if not any(0 in ligne for ligne in marques):
             vainqueur, fin_partie = 0, True
 
-# Demande à la fin de la partie le status de ces stats (gagné, match nul, etc...), et si il veut rejouer
+# Demande à la fin de la partie le status de ces stats (gagné, match nul, etc...), + rejouer
     def dessiner_fin_partie():
         texte_fin = f"Joueur {vainqueur} Gagné" if vainqueur != 0 else "Partie NUL"
         img_fin = fonte.render(texte_fin, True, bleu)

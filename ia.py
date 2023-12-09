@@ -18,7 +18,7 @@ def jouer_aleatoire(board):
     return random.choice(empty_cells) if empty_cells else None
 
 def jouer_moyen(board, player):
-    # Si l'IA peut gagner, elle joue pour gagner
+    # Si l'IA peut gagner, l'IA joue pour gagner
     for i in range(9):
         if board[i] == 0:
             board[i] = player
@@ -26,7 +26,7 @@ def jouer_moyen(board, player):
                 return i
             board[i] = 0
 
-    # Si l'adversaire peut gagner, elle joue pour bloquer
+    # Si l'adversaire peut gagner, l'IA joue pour bloquer
     opponent = -player
     for i in range(9):
         if board[i] == 0:
@@ -47,7 +47,7 @@ def jouer_difficile(board, player):
                 return i
             board[i] = 0
 
-    # Si l'adversaire peut gagner, elle joue pour bloquer
+    # Si l'adversaire peut gagner, l'IA joue pour bloquer
     opponent = -player
     for i in range(9):
         if board[i] == 0:
@@ -57,7 +57,7 @@ def jouer_difficile(board, player):
                 return i
             board[i] = 0
 
-    # Si aucun joueur ne peut gagner immédiatement, elle joue de manière stratégique
+    # Si aucun joueur ne peut gagner immédiatement, l'IA joue de manière stratégique
     strategic_moves = [4, 0, 2, 6, 8, 1, 3, 5, 7]
     for move in strategic_moves:
         if board[move] == 0:
