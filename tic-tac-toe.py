@@ -92,7 +92,7 @@ def choisir_niveau_ia():
     while True:
         ecran_niveau.blit(fond_ecran, (0, 0))
 
-        # Afficher le titre "Tic-Tac-Toe" en haut de la fenêtre
+        # Affiche le titre "Tic-Tac-Toe" en haut de la fenêtre
         titre_surface = police_titre.render('Tic-Tac-Toe', True, (200, 200, 200))
         ombre_titre = police_titre.render('Tic-Tac-Toe', True, (30, 30, 30))
         ecran_niveau.blit(ombre_titre, (ecran_niveau.get_width() // 2 - ombre_titre.get_width() // 2 + 4, 35))
