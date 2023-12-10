@@ -9,10 +9,10 @@ def choisir_mode_de_jeu():
     # Fenêtre qui permet de choisir le mode de jeu
     ecran = pygame.display.set_mode((1000, 800))
     pygame.display.set_caption('Choisissez le mode de jeu')
-    police_titre = pygame.font.Font("pacman.TTF", 80)
+    police_titre = pygame.font.Font("polices/pacman.TTF", 80)
     fond_ecran = pygame.image.load("image fond menu/menu-fond.jpg")
     fonte_titre = pygame.font.SysFont(None, 80)
-    police_texte_joueur = pygame.font.Font("Pokemon_Solid.TTF", 30)
+    police_texte_joueur = pygame.font.Font("polices/Pokemon_Solid.TTF", 30)
     fonte = pygame.font.SysFont(None, 40)
     horloge = pygame.time.Clock()
 
@@ -83,8 +83,8 @@ def choisir_niveau_ia():
     pygame.display.set_caption('Choisissez le niveau de l\'IA')
     fond_ecran = pygame.image.load("image fond menu/niveau.jpg")
     
-    police_titre = pygame.font.Font("pacman.TTF", 80)
-    police_niveau = pygame.font.Font("Pokemon_Solid.TTF", 40)
+    police_titre = pygame.font.Font("polices/pacman.TTF", 80)
+    police_niveau = pygame.font.Font("polices/Pokemon_Solid.TTF", 40)
     horloge = pygame.time.Clock()
 
     niveau_choisi = None
