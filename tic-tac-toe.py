@@ -1,10 +1,17 @@
 import pygame
+import pygame.mixer
 import sys
 from pygame.locals import *
 from ia import ia
 
+def initialiser_musique():
+    pygame.mixer.init()
+    pygame.mixer.music.load("song pacman.mp3")
+    pygame.mixer.music.play(-1)
+
 def choisir_mode_de_jeu():
     pygame.init()
+    initialiser_musique()
 
     # Fenêtre qui permet de choisir le mode de jeu
     ecran = pygame.display.set_mode((1000, 800))
@@ -77,6 +84,7 @@ def choisir_mode_de_jeu():
 
 def choisir_niveau_ia():
     pygame.init()
+    initialiser_musique()
 
     # Fenêtre qui permet de choisir le niveau de l'IA
     ecran_niveau = pygame.display.set_mode((1000, 800))
